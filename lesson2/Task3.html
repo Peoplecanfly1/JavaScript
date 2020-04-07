@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        /* 
+Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем написать скрипт, который рабследующему принципу:
+если a и b положительные, вывести их разность;
+если а и b отрицательные, вывести их произведение;
+если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом. 
+       */
+        var a = parseInt(prompt('Введите значение переменной "а": '))
+        var b = parseInt(prompt('Введите значение переменной "b": '))
+
+        if (a >= 0 && b >= 0) {
+            alert(a - b)
+        } else if (a < 0 && b < 0) {
+            alert(a * b)
+        } else if (a >= 0 && b < 0) {
+            alert(a + b)
+        } else if (b >= 0 && a < 0) {
+            alert(a + b)
+        }
+
+
+        //  4. Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.
+
+
+        var a = parseInt(prompt('Введите значение переменной "а" в пределах от 0 до 15:'))
+
+        //или при помощи рандома: 
+        /* var a = Math.floor(Math.random() * (15));
+        console.log(a); */
+
+
+        if (a >= 0 && a <= 15) {
+            switch (a) {
+                case 0:
+                    console.log(0);
+                case 1:
+                    console.log(1);
+                case 2:
+                    console.log(2);
+                case 3:
+                    console.log(3);
+                case 4:
+                    console.log(4);
+                case 5:
+                    console.log(5);
+                case 6:
+                    console.log(6);
+                case 7:
+                    console.log(7);
+                case 8:
+                    console.log(8);
+                case 9:
+                    console.log(9);
+                case 10:
+                    console.log(10);
+                case 11:
+                    console.log(11);
+                case 12:
+                    console.log(12);
+                case 13:
+                    console.log(13);
+                case 14:
+                    console.log(14);
+                case 15:
+                    console.log(15);
+            }
+        } else {
+            alert('Вы ввели число не из дапазона')
+        }
+
+        //5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.     
+
+        function sum(x, y) {
+            return (x + y);
+        }
+
+        function minus(x, y) {
+            return (x - y);
+        }
+
+        function mult(x, y) {
+            return (x * y);
+        }
+
+        function div(x, y) {
+            return (x / y);
+        }
+
+        // ### 6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 3) и вернуть полученное значение (использовать switch).
+
+        function mathOperation(arg1, arg2, operation) {
+            switch(operation) {
+                case '-':
+                    console.log(minus(arg1,arg2));
+                    break;
+                case '+':
+                    console.log(sum(arg1,arg2));
+                    break;
+                case '*':
+                    console.log(mult(arg1,arg2));
+                    break;
+                case '/':
+                    console.log(div(arg1,arg2));
+                    break;
+                default:
+                    console.log('error')    
+            }
+        }
+        
+        mathOperation(3,5,'-');
+
+        // 7. *Сравнить null и 0. Попробуйте объяснить результат. 
+        
+        
+         alert(null > 0); // false
+         alert(null < 0); // false
+         alert(null == 0); // false
+         alert(null >= 0); // true
+         alert(null <= 0); // true
+    
+         // P.S Нашел статью на Хабре, прочитал и понял почему такие значения     
+         // Если null < 0 принимает значение false, то null >= 0 принимает значение true 
+         // Это из спецификации ЕСMA. 
+      
+         //  8. *С помощью рекурсии организовать функцию возведения числа в степень. Формат: function power(val, pow), где val – заданное число, pow – степень.
+         
+         var a = parseInt(prompt('Введите число : '))
+         var b = parseInt(prompt('Введите степень: '))
+         function sqrt (val,pow) {
+         if(pow == 0) {
+                return 1 
+            }
+            else {
+                return val = val * sqrt(val, pow-1)
+            }
+       }
+            alert("результат:" + sqrt(a,b))
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
