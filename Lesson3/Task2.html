@@ -1,0 +1,44 @@
+<script>
+ 
+    
+    function countBasketPrice(basket) {
+        var good;
+        var totalBasket = 0; 
+    
+        for(good of basket) {
+            var count = 0, pricePosition = 0;
+            count += good.qty;
+            pricePosition += good.price;
+            totalBasket += count * pricePosition;
+        };
+        
+        alert('Total price of Basket is:'+ totalBasket)
+        
+    };
+    
+    var goods = [
+        {
+            title : "Товар 1",        
+            price : 100,
+            qty : 2
+        },
+        {
+            title : "Товар 2",        
+            price : 200,
+            qty : 3
+        },
+        {
+            title : "Товар 3",        
+            price : 400,
+            qty : 5
+        }
+    ];
+    
+    
+  
+ 
+        
+    countBasketPrice(goods);
+    
+
+</script>
