@@ -1,0 +1,32 @@
+<script>
+    // конструктов класса номера
+    function Number(hundreds, decades, units) {
+        this.hundreds = hundreds;
+        this.decades = decades;
+        this.units = units;
+    }
+    // функция разбиения числа на цифры.
+    function dev(number) {
+        var hunreds = Math.floor(number / 100);
+        var decades = Math.floor(number / 10) - (hunreds * 10);
+        var units = number - (hunreds * 100 + decades * 10);
+        return  mas = [hunreds,decades,units];
+    }
+
+    // основная логика алгоритма.
+    while (1) {
+        var number = parseInt(prompt('Введиде число от 0 до 999'));
+        if (number > 0 && number < 1000) {
+           dev(number);
+           var splitNumber = new Number(mas[0],mas[1],mas[2])
+           console.log(splitNumber);
+        }
+        else {
+            alert('Вы ввели неверное число');
+            break;
+        }
+    }
+
+    // если бы речь шла о числе низвестной длинны, можно проходить по элементам массива за место явного указания места (строка 21), и в разбивки на число написать цикл. 
+    
+</script>
