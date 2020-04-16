@@ -1,0 +1,94 @@
+<script>
+    var flag = true
+    // конструктов вопросов для игры. 
+    function question_const(question, a1, a2, a3, a4, correct) {
+        this.question = question;
+        this.a1 = a1;
+        this.a2 = a2;
+        this.a3 = a3;
+        this.a4 = a4;
+        this.correct = correct;
+
+    }
+
+
+    // Генерируем вопросы (объекты)
+    var q_1 = new question_const(
+        'What a nice question:',
+        'answer1',
+        'answer2',
+        'answer3_bla bla bla',
+        'answer4',
+        1
+    )
+
+    var q_2 = new question_const(
+        'What a nice question2:',
+        'answer1',
+        'answer2',
+        'answer3_bla bla bla',
+        'answer4',
+        2
+    )
+
+    var q_3 = new question_const(
+        'What a nice question3:',
+        'answer1',
+        'answer2',
+        'answer3_bla bla bla',
+        'answer4',
+        3
+    )
+
+    var q_4 = new question_const(
+        'What a nice question4:',
+        'answer1',
+        'answer2',
+        'answer3_bla bla bla',
+        'answer4',
+        1
+    )
+
+    var q_5 = new question_const(
+        'What a nice question5:',
+        'answer1',
+        'answer2',
+        'answer3_bla bla bla',
+        'answer4',
+        2
+    )
+
+    var q_6 = new question_const(
+        'What a nice question6:',
+        'answer1',
+        'answer2',
+        'answer3_bla bla bla',
+        'answer4',
+        4
+    )
+
+    console.log(q_1);
+
+    var mas = [q_1, q_2, q_3, q_4, q_5, q_6];
+    var finish = mas.length;
+    var rightAnswer = 0
+    var money = 1000 
+    
+    
+    for (var q of mas) {
+    var userAnswer = +prompt(q.question + '\n' + '1.' + q.a1 + '\n' + '2.' + q.a2 + '\n' + '3.' + q.a3 + '\n' + '4.' + q.a4 + '\n\n' + 'Ввдите цифру правильно ответа');
+    if (userAnswer != q.correct) {
+        alert('Неправильный ответ, вы проиграли и заработали 0 рублей.');
+        break;   
+        } 
+    else {
+            alert('Поздравляю это правильный ответ! Вы заработали:' + money + ' рублей');
+            money*=2
+            rightAnswer++
+        }
+    }
+    if (rightAnswer == finish) {
+        alert('Поздравляю вы победили и заработали: ' + (money/2) )
+    }
+
+</script>
